@@ -40,6 +40,17 @@ function getColors(theme) {
     case "dark_colorblind":
       return darkColorblindColors;
     case "dark_dimmed":
+      dimmedColors.canvas = {
+        default: "#1c2127",
+        overlay: "#1c2127",
+        inset: "#181d23",
+        subtle: "#181d23",
+      }
+      dimmedColors.border = {
+        default: "#181d23",
+        muted: "#1a1f25",
+        subtle: "#1c2127",
+      }
       return dimmedColors;
     default:
       throw new Error(`Colors are missing for value: ${theme}`);

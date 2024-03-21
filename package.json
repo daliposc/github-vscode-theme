@@ -1,7 +1,7 @@
 {
-  "name": "github-vscode-theme",
-  "displayName": "GitHub Theme",
-  "description": "GitHub theme for VS Code",
+  "name": "github-vscode-theme-for-connor",
+  "displayName": "GitHub Theme - Modified",
+  "description": "GitHub theme for Connor's VS Code",
   "version": "6.3.4",
   "publisher": "GitHub",
   "license": "MIT",
@@ -34,49 +34,9 @@
   "contributes": {
     "themes": [
       {
-        "label": "GitHub Light Default",
-        "uiTheme": "vs",
-        "path": "./themes/light-default.json"
-      },
-      {
-        "label": "GitHub Light High Contrast",
-        "uiTheme": "hc-light",
-        "path": "./themes/light-high-contrast.json"
-      },
-      {
-        "label": "GitHub Light Colorblind (Beta)",
-        "uiTheme": "vs",
-        "path": "./themes/light-colorblind.json"
-      },
-      {
-        "label": "GitHub Dark Default",
-        "uiTheme": "vs-dark",
-        "path": "./themes/dark-default.json"
-      },
-      {
-        "label": "GitHub Dark High Contrast",
-        "uiTheme": "hc-black",
-        "path": "./themes/dark-high-contrast.json"
-      },
-      {
-        "label": "GitHub Dark Colorblind (Beta)",
-        "uiTheme": "vs-dark",
-        "path": "./themes/dark-colorblind.json"
-      },
-      {
-        "label": "GitHub Dark Dimmed",
+        "label": "GitHub Dark Dimmed - Connor",
         "uiTheme": "vs-dark",
         "path": "./themes/dark-dimmed.json"
-      },
-      {
-        "label": "GitHub Light",
-        "uiTheme": "vs",
-        "path": "./themes/light.json"
-      },
-      {
-        "label": "GitHub Dark",
-        "uiTheme": "vs-dark",
-        "path": "./themes/dark.json"
       }
     ]
   },
@@ -91,8 +51,8 @@
   },
   "scripts": {
     "start": "nodemon --watch src src/index.js",
-    "build": "node src/index.js && mkdir -p build",
-    "package": "vsce package -o ./build/github-vscode-theme.vsix",
+    "build": "node src/index.js && node fix_build_dir.js",
+    "package": "vsce package -o ./build/github-vscode-theme-connor.vsix",
     "prepublishOnly": "npm run build && vsce publish",
     "release": "changeset publish"
   },
@@ -103,5 +63,6 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
 }

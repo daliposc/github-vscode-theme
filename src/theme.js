@@ -91,7 +91,7 @@ function getTheme({ theme, name }) {
 
       "activityBar.foreground"        : color.fg.default,
       "activityBar.inactiveForeground": color.fg.muted,
-      "activityBar.background"        : color.canvas.default,
+      "activityBar.background"        : color.canvas.inset,
       "activityBarBadge.foreground"   : color.fg.onEmphasis,
       "activityBarBadge.background"   : color.accent.emphasis,
       "activityBar.activeBorder"      : color.primer.border.active,
@@ -133,8 +133,8 @@ function getTheme({ theme, name }) {
       "quickInput.foreground" : color.fg.default,
 
       "statusBar.foreground"             : color.fg.muted,
-      "statusBar.background"             : color.canvas.default,
-      "statusBar.border"                 : color.border.default,
+      "statusBar.background"             : color.canvas.inset,
+      "statusBar.border"                 : color.border.inset,
       "statusBar.focusBorder"            : alpha(color.accent.emphasis, 0.5),
       "statusBar.noFolderBackground"     : color.canvas.default,
       "statusBar.debuggingForeground"    : color.fg.onEmphasis,
@@ -181,13 +181,13 @@ function getTheme({ theme, name }) {
       "editorCursor.foreground"           : color.accent.fg,
 
       "editor.findMatchBackground"            : color.attention.emphasis,
-      "editor.findMatchHighlightBackground"   : alpha(scale.yellow[1], 0.5),
+      "editor.findMatchHighlightBackground"   : alpha(scale.yellow[1], 0.3),
       "editor.linkedEditingBackground"        : alpha(color.accent.fg, 0.07),
       "editor.inactiveSelectionBackground"    : alpha(color.accent.fg, 0.07),
       "editor.selectionBackground"            : alpha(color.accent.fg, 0.2),
-      "editor.selectionHighlightBackground"   : alpha(scale.green[3], 0.25),
-      "editor.wordHighlightBackground"        : alpha(color.neutral.subtle, 0.5),
-      "editor.wordHighlightBorder"            : alpha(color.neutral.muted, 0.6),
+      "editor.selectionHighlightBackground"   : alpha(scale.green[3], 0.15),
+      "editor.wordHighlightBackground"        : alpha(color.neutral.subtle, 0.3),
+      "editor.wordHighlightBorder"            : alpha(color.neutral.muted, 0.4),
       "editor.wordHighlightStrongBackground"  : alpha(color.neutral.muted, 0.3),
       "editor.wordHighlightStrongBorder"      : alpha(color.neutral.muted, 0.6),
       "editorBracketMatch.background"         : alpha(scale.green[3], 0.25),
@@ -204,6 +204,7 @@ function getTheme({ theme, name }) {
       "editorInlayHint.paramBackground": alpha(scale.gray[3], 0.2),
       "editorInlayHint.paramForeground": color.fg.muted,
 
+      "editorGutter.background": color.border.muted,
       "editorGutter.modifiedBackground": color.attention.muted,
       "editorGutter.addedBackground"   : color.success.muted,
       "editorGutter.deletedBackground" : color.danger.muted,
@@ -213,7 +214,7 @@ function getTheme({ theme, name }) {
       "diffEditor.removedLineBackground" : lightDark(alpha(scale.red[1], 0.3), alpha(scale.red[5], 0.15)),
       "diffEditor.removedTextBackground" : lightDark(alpha(scale.red[3], 0.4), alpha(scale.red[3], 0.3)),
 
-      "scrollbar.shadow"                  : alpha(scale.gray[5], 0.2),
+      "scrollbar.shadow"                  : color.border.subtle,
       "scrollbarSlider.background"        : lightDark(alpha(scale.gray[4], 0.2), alpha(scale.gray[3], 0.2)),
       "scrollbarSlider.hoverBackground"   : lightDark(alpha(scale.gray[4], 0.24), alpha(scale.gray[3], 0.24)),
       "scrollbarSlider.activeBackground"  : lightDark(alpha(scale.gray[4], 0.28), alpha(scale.gray[3], 0.28)),
@@ -256,7 +257,7 @@ function getTheme({ theme, name }) {
       "symbolIcon.fieldForeground": lightDark( scale.orange[6], scale.orange[3]),
       "symbolIcon.fileForeground": lightDark( scale.yellow[6], scale.yellow[3]),
       "symbolIcon.folderForeground": lightDark( scale.yellow[6], scale.yellow[3]),
-      "symbolIcon.functionForeground": lightDark( scale.purple[6], scale.purple[3]),
+      "symbolIcon.functionForeground": lightDark( scale.purple[6], scale.purple[4]),
       "symbolIcon.interfaceForeground": lightDark( scale.orange[6], scale.orange[3]),
       "symbolIcon.keyForeground": lightDark( scale.blue[6], scale.blue[3]),
       "symbolIcon.keywordForeground": lightDark( scale.red[6], scale.red[3]),
@@ -297,12 +298,12 @@ function getTheme({ theme, name }) {
       'terminal.ansiBrightCyan': color.ansi.cyanBright,
       'terminal.ansiBrightWhite': color.ansi.whiteBright,
 
-      "editorBracketHighlight.foreground1": lightDark(scale.blue[5], scale.blue[2]),
-      "editorBracketHighlight.foreground2": lightDark(scale.green[5], scale.green[2]),
-      "editorBracketHighlight.foreground3": lightDark(scale.yellow[5], scale.yellow[2]),
-      "editorBracketHighlight.foreground4": lightDark(scale.red[5], scale.red[2]),
-      "editorBracketHighlight.foreground5": lightDark(scale.pink[5], scale.pink[2]),
-      "editorBracketHighlight.foreground6": lightDark(scale.purple[5], scale.purple[2]),
+      "editorBracketHighlight.foreground1": lightDark(scale.blue[5], alpha(scale.blue[2], 0.80)),
+      "editorBracketHighlight.foreground2": lightDark(scale.green[5], alpha(scale.green[2], 0.80)),
+      "editorBracketHighlight.foreground3": lightDark(scale.yellow[5], alpha(scale.yellow[2], 0.80)),
+      "editorBracketHighlight.foreground4": lightDark(scale.red[5], alpha(scale.red[2], 0.80)),
+      "editorBracketHighlight.foreground5": lightDark(scale.pink[5], alpha(scale.pink[2], 0.80)),
+      "editorBracketHighlight.foreground6": lightDark(scale.purple[5], alpha(scale.purple[2], 0.80)),
       "editorBracketHighlight.unexpectedBracket.foreground": color.fg.muted, // gray
 
       "gitDecoration.addedResourceForeground"      : color.success.fg,
@@ -330,7 +331,7 @@ function getTheme({ theme, name }) {
     semanticHighlighting: true,
     tokenColors: [
       {
-        scope: ["comment", "punctuation.definition.comment", "string.comment"],
+        scope: ["comment", "punctuation.definition.comment", "string.comment", "string.quoted.docstring.multi.python"],
         settings: {
           foreground: lightDark(scale.gray[5], scale.gray[3])
         },
@@ -425,6 +426,15 @@ function getTheme({ theme, name }) {
         ],
         settings: {
           foreground: lightDark(scale.blue[8], scale.blue[1])
+        },
+      },
+      {
+        scope: [
+          "punctuation.definition.string.begin",
+          "punctuation.definition.string.end"
+        ],
+        settings: {
+          foreground: lightDark(scale.blue[6], alpha(scale.blue[2], 0.50)),
         },
       },
       {
