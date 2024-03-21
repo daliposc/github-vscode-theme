@@ -84,9 +84,9 @@ function getTheme({ theme, name }) {
       "progressBar.background": color.accent.emphasis,
 
       "titleBar.activeForeground"  : color.fg.muted,
-      "titleBar.activeBackground"  : color.canvas.default,
+      "titleBar.activeBackground"  : color.canvas.inset,
       "titleBar.inactiveForeground": color.fg.muted,
-      "titleBar.inactiveBackground": color.canvas.inset,
+      "titleBar.inactiveBackground": color.canvas.default,
       "titleBar.border"            : color.border.default,
 
       "activityBar.foreground"        : color.fg.default,
@@ -94,7 +94,7 @@ function getTheme({ theme, name }) {
       "activityBar.background"        : color.canvas.inset,
       "activityBarBadge.foreground"   : color.fg.onEmphasis,
       "activityBarBadge.background"   : color.accent.emphasis,
-      "activityBar.activeBorder"      : color.primer.border.active,
+      "activityBar.activeBorder"      : color.border.subtle,
       "activityBar.border"            : color.border.default,
 
       "sideBar.foreground"             : color.fg.default,
@@ -160,7 +160,7 @@ function getTheme({ theme, name }) {
       "tab.unfocusedActiveBorderTop": color.border.default,
       "tab.activeBorder"            : color.canvas.default,
       "tab.unfocusedActiveBorder"   : color.canvas.default,
-      "tab.activeBorderTop"         : color.primer.border.active,
+      "tab.activeBorderTop"         : color.border.subtle,
 
       "breadcrumb.foreground"               : color.fg.muted,
       "breadcrumb.focusForeground"          : color.fg.default,
@@ -214,7 +214,7 @@ function getTheme({ theme, name }) {
       "diffEditor.removedLineBackground" : lightDark(alpha(scale.red[1], 0.3), alpha(scale.red[5], 0.15)),
       "diffEditor.removedTextBackground" : lightDark(alpha(scale.red[3], 0.4), alpha(scale.red[3], 0.3)),
 
-      "scrollbar.shadow"                  : color.border.subtle,
+      "scrollbar.shadow"                  : color.border.muted,
       "scrollbarSlider.background"        : lightDark(alpha(scale.gray[4], 0.2), alpha(scale.gray[3], 0.2)),
       "scrollbarSlider.hoverBackground"   : lightDark(alpha(scale.gray[4], 0.24), alpha(scale.gray[3], 0.24)),
       "scrollbarSlider.activeBackground"  : lightDark(alpha(scale.gray[4], 0.28), alpha(scale.gray[3], 0.28)),
@@ -226,7 +226,7 @@ function getTheme({ theme, name }) {
 
       "panel.background"               : color.canvas.inset,
       "panel.border"                   : color.border.default,
-      "panelTitle.activeBorder"        : color.primer.border.active,
+      "panelTitle.activeBorder"        : color.border.subtle,
       "panelTitle.activeForeground"    : color.fg.default,
       "panelTitle.inactiveForeground"  : color.fg.muted,
       "panelInput.border"              : color.border.default,
@@ -329,7 +329,23 @@ function getTheme({ theme, name }) {
       "welcomePage.buttonHoverBackground": color.btn.hoverBg,
     },
     semanticHighlighting: true,
+    // semanticTokenColors: {
+    //   "*.declaration": { "bold": true }
+    // },
     tokenColors: [
+      {
+        "name": "Italics",
+        "scope": [
+          "emphasis",
+          "variable.language.special.self.python",
+          "keyword.control.flow.python",
+          "keyword.codetag.notation.python",
+          "keyword.control.import.python",
+        ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      },
       {
         scope: ["comment", "punctuation.definition.comment", "string.comment", "string.quoted.docstring.multi.python"],
         settings: {
@@ -434,7 +450,7 @@ function getTheme({ theme, name }) {
           "punctuation.definition.string.end"
         ],
         settings: {
-          foreground: lightDark(scale.blue[6], alpha(scale.blue[2], 0.50)),
+          foreground: lightDark(scale.blue[6], alpha(scale.blue[2], 0.5)),
         },
       },
       {
@@ -550,6 +566,15 @@ function getTheme({ theme, name }) {
         scope: "support.type.property-name.json",
         settings: {
           foreground: lightDark(scale.green[6], scale.green[1])
+        },
+      },
+      {
+        "scope": [
+          "punctuation.support.type.property-name.end",
+          "punctuation.support.type.property-name.begin"
+        ],
+        settings: {
+          foreground: lightDark(scale.green[6], alpha(scale.green[2], 0.5))
         },
       },
       {

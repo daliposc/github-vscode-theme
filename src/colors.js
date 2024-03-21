@@ -49,7 +49,7 @@ function getColors(theme) {
       dimmedColors.border = {
         default: "#181d23",
         muted: "#1a1f25",
-        subtle: "#1c2127",
+        subtle: "#24292f",
       }
       return dimmedColors;
     default:
