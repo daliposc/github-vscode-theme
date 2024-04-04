@@ -37,6 +37,11 @@
         "label": "GitHub Dark Dimmed - Connor",
         "uiTheme": "vs-dark",
         "path": "./themes/dark-dimmed.json"
+      },
+      {
+        "label": "GitHub Dark Dimmed Rose Pine - Connor",
+        "uiTheme": "vs-dark",
+        "path": "./themes/dark-dimmed-rose-pine.json"
       }
     ]
   },

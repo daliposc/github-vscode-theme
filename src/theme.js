@@ -190,8 +190,8 @@ function getTheme({ theme, name }) {
       "editor.wordHighlightBorder"            : alpha(color.neutral.muted, 0.4),
       "editor.wordHighlightStrongBackground"  : alpha(color.neutral.muted, 0.3),
       "editor.wordHighlightStrongBorder"      : alpha(color.neutral.muted, 0.6),
-      "editorBracketMatch.background"         : alpha(scale.green[3], 0.25),
-      "editorBracketMatch.border"             : alpha(scale.green[3], 0.6),
+      "editorBracketMatch.background"         : alpha(scale.purple[3], 0.25),
+      "editorBracketMatch.border"             : alpha(scale.purple[3], 0.6),
       // text selection for High Contrast themes
       "editor.selectionForeground"            : onlyHighContrast(color.fg.onEmphasis),
       "editor.selectionBackground"            : onlyHighContrast(color.neutral.emphasisPlus),

@@ -24,16 +24,19 @@ function getColors(theme) {
     case "light_colorblind":
         return lightColorblindColors;
     case "dark":
-
-      // Temp override until Primitives are updated
-      darkColors.fg.default = "#e6edf3";
-      darkColors.fg.muted = "#7d8590";
-      darkColors.accent.fg = "#2f81f7";
-      darkColors.severe.subtle = "rgba(219, 109, 40, 0.1)";
-      darkColors.danger.subtle = "rgba(248, 81, 73, 0.1)";
-      darkColors.done.subtle = "rgba(163, 113, 247, 0.1)";
-      darkColors.sponsors.subtle = "rgba(219, 97, 162, 0.1)";
-
+      darkColors.canvas = {
+        default: "#1d1b27",
+        overlay: "#1d1b27",
+        inset: "#191724",
+        subtle: "#191724",
+      }
+      darkColors.border = {
+        default: "#191724",
+        muted: "#1b1926",
+        subtle: "#26233a",
+      } 
+      darkColors.accent.fg = "#ffb3d8";
+      darkColors.accent.emphasis = "#6e558f";
       return darkColors;
     case "dark_high_contrast":
       return darkHighContrastColors;
