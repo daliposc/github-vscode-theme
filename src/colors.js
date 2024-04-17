@@ -1,60 +1,69 @@
-const lightColors = require("@primer/primitives/dist/json/colors/light.json");
-const lightHighContrastColors = require("@primer/primitives/dist/json/colors/light_high_contrast.json");
-const lightColorblindColors = require("@primer/primitives/dist/json/colors/light_colorblind.json");
-const darkColors = require("@primer/primitives/dist/json/colors/dark.json");
-const darkHighContrastColors = require("@primer/primitives/dist/json/colors/dark_high_contrast.json");
-const darkColorblindColors = require("@primer/primitives/dist/json/colors/dark_colorblind.json");
 const dimmedColors = require("@primer/primitives/dist/json/colors/dark_dimmed.json");
+const roseColors = require("@primer/primitives/dist/json/colors/dark_dimmed.json");
+const catColors = require("@primer/primitives/dist/json/colors/dark_dimmed.json");
+const idxColors = require("@primer/primitives/dist/json/colors/dark_dimmed.json");
 
 function getColors(theme) {
 
   switch(theme) {
-    case "light":
-
-      // Temp override until Primitives are updated
-      lightColors.success.emphasis = "#1f883d";
-      lightColors.btn.primary.bg = lightColors.success.emphasis;
-      lightColors.btn.primary.hoverBg = lightColors.scale.green[5];
-      lightColors.fg.default = "#1f2328";
-      lightColors.fg.muted = "#656d76";
-
-      return lightColors;
-    case "light_high_contrast":
-      return lightHighContrastColors;
-    case "light_colorblind":
-        return lightColorblindColors;
-    case "dark":
-      darkColors.canvas = {
-        default: "#1d1b27",
-        overlay: "#1d1b27",
-        inset: "#191724",
-        subtle: "#191724",
-      }
-      darkColors.border = {
-        default: "#191724",
-        muted: "#1b1926",
-        subtle: "#26233a",
-      } 
-      darkColors.accent.fg = "#ffb3d8";
-      darkColors.accent.emphasis = "#6e558f";
-      return darkColors;
-    case "dark_high_contrast":
-      return darkHighContrastColors;
-    case "dark_colorblind":
-      return darkColorblindColors;
     case "dark_dimmed":
       dimmedColors.canvas = {
-        default: "#1c2127",
-        overlay: "#1c2127",
+        default: "#22272d",
+        overlay: "#22272d",
         inset: "#181d23",
         subtle: "#181d23",
       }
       dimmedColors.border = {
         default: "#181d23",
-        muted: "#1a1f25",
+        muted: "#22272d",
         subtle: "#24292f",
       }
       return dimmedColors;
+    case "rose":
+      roseColors.canvas = {
+        default: "#211f2b",
+        overlay: "#211f2b",
+        inset: "#191724",
+        subtle: "#191724",
+      }
+      roseColors.border = {
+        default: "#191724",
+        muted: "#211f2b",
+        subtle: "#6e6a86",
+      } 
+      roseColors.fg.default = "#e0def4"
+      roseColors.accent.fg = "#9ccfd8";
+      roseColors.accent.emphasis = "#eb6f92";
+      return roseColors;
+    case "cat":
+      catColors.canvas = {
+        default: "#1e2030",
+        overlay: "#1e2030",
+        inset: "#181926",
+        subtle: "#181926",
+      }
+      catColors.border = {
+        default: "#181926",
+        muted: "#1e2030",
+        subtle: "#8087a2",
+      }
+      catColors.fg.default = "#cad3f5"
+      catColors.accent.fg = "#8aadf4";
+      catColors.accent.emphasis = "#f0c6c6";
+      return catColors;
+    case "idx":
+      idxColors.canvas = {
+        default: "#171f2b",
+        overlay: "#171f2b",
+        inset: "#10151d",
+        subtle: "#10151d",
+      }
+      idxColors.border = {
+        default: "#171f2b",
+        muted: "#171f2b",
+        subtle: "#393552",
+      }
+      return idxColors;
     default:
       throw new Error(`Colors are missing for value: ${theme}`);
   }

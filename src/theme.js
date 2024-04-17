@@ -19,7 +19,7 @@ function getTheme({ theme, name }) {
   const scale = color.scale; // Usage: scale.blue[6]
 
   const onlyDark = (color) => {
-    return themes({ dark: color, dark_high_contrast: color, dark_colorblind: color, dark_dimmed: color })
+    return themes({idx: color, rose: color, cat: color, dark: color, dark_high_contrast: color, dark_colorblind: color, dark_dimmed: color })
   }
 
   const onlyHighContrast = (color) => {
@@ -31,7 +31,7 @@ function getTheme({ theme, name }) {
   }
 
   const lightDark = (light, dark) => {
-    return themes({ light: light, light_high_contrast: light, light_colorblind: light, dark: dark, dark_high_contrast: dark, dark_colorblind: dark, dark_dimmed: dark })
+    return themes({ idx: dark, rose: dark, light: light, light_high_contrast: light, dark: dark, light_colorblind: light, cat: dark, dark_high_contrast: dark, dark_colorblind: dark, dark_dimmed: dark })
   }
 
   const alpha = (color, alpha) => {
@@ -97,7 +97,7 @@ function getTheme({ theme, name }) {
       "activityBar.activeBorder"      : color.border.subtle,
       "activityBar.border"            : color.border.default,
 
-      "sideBar.foreground"             : color.fg.default,
+      "sideBar.foreground"             : color.fg.muted,
       "sideBar.background"             : color.canvas.inset,
       "sideBar.border"                 : color.border.default,
       "sideBarTitle.foreground"        : color.fg.default,

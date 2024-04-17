@@ -1,7 +1,7 @@
 {
-  "name": "github-vscode-theme-for-connor",
-  "displayName": "GitHub Theme - Modified",
-  "description": "GitHub theme for Connor's VS Code",
+  "name": "github-vscode-modified-connor",
+  "displayName": "GH+C Themes",
+  "description": "GitHub themes with different backgrounds",
   "version": "6.3.4",
   "publisher": "GitHub",
   "license": "MIT",
@@ -34,15 +34,26 @@
   "contributes": {
     "themes": [
       {
-        "label": "GitHub Dark Dimmed - Connor",
+        "label": "GH+C Dark Dimmed",
         "uiTheme": "vs-dark",
-        "path": "./themes/dark-dimmed.json"
+        "path": "./themes/ghc-dark-dimmed.json"
       },
       {
-        "label": "GitHub Dark Dimmed Rose Pine - Connor",
+        "label": "GH+C Rose Pine",
         "uiTheme": "vs-dark",
-        "path": "./themes/dark-dimmed-rose-pine.json"
+        "path": "./themes/ghc-rose.json"
+      },
+      {
+        "label": "GH+C Catppuccin",
+        "uiTheme": "vs-dark",
+        "path": "./themes/ghc-cat.json"
+      },
+      {
+        "label": "GH+C Project IDX",
+        "uiTheme": "vs-dark",
+        "path": "./themes/ghc-idx.json"
       }
+
     ]
   },
   "devDependencies": {
@@ -57,7 +68,7 @@
   "scripts": {
     "start": "nodemon --watch src src/index.js",
     "build": "node src/index.js && node fix_build_dir.js",
-    "package": "vsce package -o ./build/github-vscode-theme-connor.vsix",
+    "package": "vsce package -o ./build/github-and-connor-and-others-vscode-theme.vsix",
     "prepublishOnly": "npm run build && vsce publish",
     "release": "changeset publish"
   },
