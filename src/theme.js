@@ -134,7 +134,7 @@ function getTheme({ theme, name }) {
 
       "statusBar.foreground"             : color.fg.muted,
       "statusBar.background"             : color.canvas.inset,
-      "statusBar.border"                 : color.border.inset,
+      "statusBar.border"                 : color.border.default,
       "statusBar.focusBorder"            : alpha(color.accent.emphasis, 0.5),
       "statusBar.noFolderBackground"     : color.canvas.default,
       "statusBar.debuggingForeground"    : color.fg.onEmphasis,
@@ -148,7 +148,7 @@ function getTheme({ theme, name }) {
 
       "editorGroupHeader.tabsBackground": color.canvas.inset,
       "editorGroupHeader.tabsBorder"    : color.border.default,
-      "editorGroup.border"              : color.border.default,
+      "editorGroup.border"              : color.border.subtle,
 
       "tab.activeForeground"        : color.fg.default,
       "tab.inactiveForeground"      : color.fg.muted,
@@ -160,7 +160,7 @@ function getTheme({ theme, name }) {
       "tab.unfocusedActiveBorderTop": color.border.default,
       "tab.activeBorder"            : color.canvas.default,
       "tab.unfocusedActiveBorder"   : color.canvas.default,
-      "tab.activeBorderTop"         : color.border.subtle,
+      "tab.activeBorderTop"         : color.border.default,
 
       "breadcrumb.foreground"               : color.fg.muted,
       "breadcrumb.focusForeground"          : color.fg.default,
@@ -169,7 +169,8 @@ function getTheme({ theme, name }) {
 
       "editor.foreground"                 : color.fg.default,
       "editor.background"                 : color.canvas.default,
-      "editorWidget.background"           : color.canvas.overlay,
+      "editorWidget.background"           : color.canvas.inset,
+      "editorWidget.border"               : color.neutral.emphasis,
       "editor.foldBackground"             : alpha(color.neutral.emphasis, 0.1),
       "editor.lineHighlightBackground"    : color.codemirror.activelineBg,
       "editor.lineHighlightBorder"        : onlyDarkHighContrast(color.accent.fg),
@@ -318,10 +319,18 @@ function getTheme({ theme, name }) {
       "editor.stackFrameHighlightBackground"       : color.attention.muted,
       "editor.focusedStackFrameHighlightBackground": color.success.muted,
 
-      "peekViewEditor.matchHighlightBackground": onlyDark(color.attention.muted),
-      "peekViewResult.matchHighlightBackground": onlyDark(color.attention.muted),
+      
+      "peekView.border": color.neutral.emphasis,
       "peekViewEditor.background"              : onlyDark(color.neutral.subtle),
-      "peekViewResult.background"              : onlyDark(scale.gray[9]),
+      "peekViewEditor.matchHighlightBackground": onlyDark(color.attention.muted),
+      "peekViewResult.background": color.canvas.default,
+      "peekViewResult.matchHighlightBackground": onlyDark(color.attention.muted),
+      "peekViewResult.fileForeground": color.fg.default,
+      "peekViewResult.selectionForeground": color.fg.default,
+      "peekViewResult.lineForeground": color.fg.muted,
+      "peekViewTitle.background": color.canvas.inset,
+      "peekViewTitleLabel.foreground": color.fg.default,
+      "peekViewTitleDescription.foreground": color.fg.muted,
 
       "settings.headerForeground"        : color.fg.default,
       "settings.modifiedItemIndicator"   : color.attention.muted,

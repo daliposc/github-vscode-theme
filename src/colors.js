@@ -14,9 +14,9 @@ function getColors(theme) {
         subtle: "#181d23",
       }
       dimmedColors.border = {
-        default: "#181d23",
+        default: "#22272d",
         muted: "#22272d",
-        subtle: "#24292f",
+        subtle: "#181d23",
       }
       return dimmedColors;
     case "rose":
@@ -27,12 +27,12 @@ function getColors(theme) {
         subtle: "#191724",
       }
       roseColors.border = {
-        default: "#191724",
+        default: "#211f2b",
         muted: "#211f2b",
-        subtle: "#6e6a86",
+        subtle: "#191724",
       } 
       roseColors.fg.default = "#e0def4"
-      roseColors.accent.fg = "#9ccfd8";
+      roseColors.accent.fg = "#ea9a97";
       roseColors.accent.emphasis = "#eb6f92";
       return roseColors;
     case "cat":
@@ -43,13 +43,24 @@ function getColors(theme) {
         subtle: "#181926",
       }
       catColors.border = {
-        default: "#181926",
+        default: "#1e2030",
         muted: "#1e2030",
-        subtle: "#8087a2",
+        subtle: "#181926",
       }
-      catColors.fg.default = "#cad3f5"
-      catColors.accent.fg = "#8aadf4";
-      catColors.accent.emphasis = "#f0c6c6";
+      catColors.neutral = {
+        emphasis: "#494d64",
+        muted: "#363a4f",
+        subtle: "#24273a",
+      }
+      catColors.fg = {
+        default: "#cad3f5",
+        muted: "#6e738d",
+        subtle: "#5b6078",
+      }
+      catColors.accent = {
+        fg: "#f4b8e4",
+        emphasis: "#6842ab",
+      }
       return catColors;
     case "idx":
       idxColors.canvas = {
@@ -61,8 +72,9 @@ function getColors(theme) {
       idxColors.border = {
         default: "#171f2b",
         muted: "#171f2b",
-        subtle: "#393552",
+        subtle: "#10151d",
       }
+      idxColors.accent.emphasis = "#7287fd";
       return idxColors;
     default:
       throw new Error(`Colors are missing for value: ${theme}`);
